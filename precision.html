@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Time 'em Out</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Darren Ross's speed check</h1>
+
+  <div id="target">Your time</div>
+  <div id="counter">Count</div>
+  <div>
+    <button class="btn btn-success">Start Timer</button>
+    <button class="btn btn-danger" onclick="recordTime()">Stop Timer</button>
+  </div>
+
+  <script>
+    var stop
+    let seconds = 5
+
+    
+
+    function recordTime() {
+      stop = Date.now();
+      console.log(stop);
+    }
+  </script>
+
+</body>
+
+</html>
