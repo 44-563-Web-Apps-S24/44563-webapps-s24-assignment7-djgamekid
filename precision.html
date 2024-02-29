@@ -18,7 +18,7 @@
   <div id="target">Your time</div>
   <div id="counter">Count</div>
   <div>
-    <button class="btn btn-success">Start Timer</button>
+    <button class="btn btn-success" onclick="startTime()">Start Timer</button>
     <button class="btn btn-danger" onclick="recordTime()">Stop Timer</button>
   </div>
 
@@ -26,11 +26,29 @@
     var stop
     let seconds = 5
 
-    
+    function startTime() {
+      seconds = Math.floor(Math.random() * 9) + 2
+      for (let i = 0; i < seconds; i++) {
+        setTimeout(() => {
+          var counter = document.getElementById("counter").innerText = String(i)
+        }, (seconds - i) * 1000)
+      }
+
+      setTimeout(() => {
+        const target = document.getElementById("target")
+        if (!stop) {
+          target.innerText = "Too slow"
+        } else {
+          var trueStop = Date.now()
+          var timeDiff = trueStop - stop;
+          target.innerText = `Time was ${timeDiff}`
+        }
+      }, seconds * 1000)
+    }
 
     function recordTime() {
-      stop = Date.now();
-      console.log(stop);
+      stop = Date.now()
+      console.log(stop)
     }
   </script>
 
